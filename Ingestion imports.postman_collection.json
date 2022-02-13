@@ -1,0 +1,1125 @@
+{
+	"info": {
+		"_postman_id": "089ce815-fcc4-4db0-a9b7-9adb97e2bea8",
+		"name": "Ingestion imports",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Import",
+			"item": [
+				{
+					"name": "import ownPrice",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.get(\"variable_key\");\r",
+									"pm.collectionVariables.get(\"variable_key\");\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownPrices\": {\r\n        \"ownPriceItems\": [\r\n            {\r\n                \"siteId\": \"100001\",\r\n                \"brand\": \"NEX\",\r\n                \"effectiveDate\": \"2022-01-30T12:37:06.800Z\",\r\n                \"productCode\": \"RULETH\",\r\n                \"ownPrice\": {\r\n                    \"currencyUnit\": \"EUR\",\r\n                    \"priceValue\": 2.100\r\n                },\r\n                \"source\": \"Import\"\r\n            }\r\n        ]\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/ownPrice",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"ownPrice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import projectedVolume",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projectedVolumes\": [\r\n        {\r\n            \"ownSiteIdentifier\": \"100001\",\r\n            \"productGroupName\": \"Gas\",\r\n            \"volume\": 1000,\r\n            \"startTime\": \"2021-06-19T14:14:55.744Z\",\r\n            \"endTime\": \"2021-07-15T14:14:55.744Z\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/projectedVolume",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"projectedVolume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import price approval",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sfrApprovals\": {\r\n      \"sfrApprovalItems\": [\r\n        {\r\n          \"siteId\": \"100001\",\r\n          \"productCode\": \"RULETH\",\r\n          \"time\": \"2017-12-12T13:05:54.13\",\r\n          \"sfrAction\": 0,\r\n          \"appliedPrice\": 10,\r\n          \"approvedBy\": \"string\"\r\n        }\r\n      ]\r\n    }\r\n  }"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/priceApproval",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"priceApproval"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import Store Sales",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"storeSales\": [\r\n    {\r\n      \"storeSalesTypeId\": \"SAMPLE\",\r\n      \"siteId\": \"100042\",\r\n      \"productId\": \"KEROSENE\",\r\n      \"productGroupId\": \"Kerosene\",\r\n      \"startTime\": \"2020-11-04T14:30:16.244Z\",\r\n      \"endTime\": \"2020-11-04T14:35:16.244Z\",\r\n      \"value\": 1000\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/storeSales",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"storeSales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import CostBreakdown by own site id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"costs\": {\r\n\t  \"costItems\": [\r\n\t\t{\r\n\t\t  \"entity\": \"OWNSITE\",\r\n\t\t  \"entityName\": \"100001\",\r\n\t\t  \"effectiveDate\": \"2020-10-30T15:02:12.903Z\",\r\n\t\t  \"productCode\": \"RULETH\",\r\n\t\t  \"cost\": {\r\n\t\t\t\"costValue\": 0.757,\r\n\t\t\t\"costType\": \"RETAILTAX\"\r\n\t\t  }\r\n\t\t}\r\n\t  ]\r\n\t}\r\n  }"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/costBreakdown",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"costBreakdown"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import competitorPrice",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"competitorPrices\": {\r\n        \"competitorPriceItems\": [\r\n            {\r\n                \"ownSite\": \r\n                    {\r\n                        \"brand\": \"NEX\",\r\n                        \"siteId\": \"100001\"\r\n                    },\r\n                \"brand\": \"Exxon\",\r\n                \"competitorId\": \"500137\",\r\n                \"effectiveDate\": \"2022-01-01T13:49:47.102Z\",\r\n                \"productCode\": \"RULETH\",\r\n                \"source\": \"JSON\",\r\n                \"competitorPrice\": \r\n                    {\r\n                        \"currencyUnit\": \"EUR\",\r\n                        \"priceValue\": 2.123\r\n                    }\r\n                },\r\n            {\r\n                \"ownSite\": \r\n                    {\r\n                        \"brand\": \"NEX\",\r\n                        \"siteId\": \"100001\"\r\n                    },\r\n                \"brand\": \"Exxon\",\r\n                \"competitorId\": \"401401\",\r\n                \"effectiveDate\": \"2021-08-19T14:49:47.102Z\",\r\n                \"productCode\": \"RULETH\",\r\n                \"source\": \"JSON\",\r\n                \"competitorPrice\": \r\n                    {\r\n                        \"currencyUnit\": \"EUR\",\r\n                        \"priceValue\": 2.124\r\n                    }\r\n            }\r\n        ]\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/competitorPrice",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"competitorPrice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import SalesVolume",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"salesVolumes\": {\r\n        \"salesVolumeItems\": [\r\n            {\r\n                \"brand\": \"NEX\",\r\n                \"siteID\": \"100001\",\r\n                \"startDate\": \"2022-02-08T15:20:30.000Z\",\r\n                \"endDate\": \"2022-02-08T16:56:59.000Z\",\r\n                \"productCode\": \"ULSD\",\r\n                \"infoCode\": 1,\r\n                \"salesVolume\": {\r\n                    \"volume\": 10,\r\n                    \"price\": 1.0,\r\n                    \"type\": \"TOTALSALES\"\r\n                }\r\n            },\r\n            {\r\n                \"brand\": \"Phillips66\",\r\n                \"siteID\": \"10005\",\r\n                \"startDate\": \"2021-12-18T13:00:00.000Z\",\r\n                \"endDate\": \"2021-12-18T13:59:59.000Z\",\r\n                \"productCode\": \"PULETH\",\r\n                \"infoCode\": 1,\r\n                \"salesVolume\": {\r\n                    \"volume\": 2701,\r\n                    \"price\": 0,\r\n                    \"type\": \"TOTALSALES\"\r\n                }\r\n            },\r\n            {\r\n                \"brand\": \"NEX\",\r\n                \"siteID\": \"100002\",\r\n                \"startDate\": \"2020-12-18T14:00:00.000Z\",\r\n                \"endDate\": \"2020-12-18T14:59:59.000Z\",\r\n                \"productCode\": \"MULETH\",\r\n                \"infoCode\": 1,\r\n                \"salesVolume\": {\r\n                    \"volume\": 0,\r\n                    \"price\": 0.25,\r\n                    \"type\": \"TOTALSALES\"\r\n                }\r\n            },\r\n            {\r\n                \"brand\": \"Shell\",\r\n                \"siteID\": \"100003\",\r\n                \"startDate\": \"2020-12-21T14:00:00.000Z\",\r\n                \"endDate\": \"2020-12-21T14:59:59.000Z\",\r\n                \"productCode\": \"RULETH\",\r\n                \"infoCode\": 1,\r\n                \"salesVolume\": {\r\n                    \"volume\": 3033,\r\n                    \"price\": 0.25,\r\n                    \"type\": \"TOTALSALES\"\r\n                }\r\n            },\r\n            {\r\n                \"brand\": \"Marathоn\",\r\n                \"siteID\": \"100004\",\r\n                \"startDate\": \"2020-12-21T14:00:00.000Z\",\r\n                \"endDate\": \"2020-12-21T14:59:59.000Z\",\r\n                \"productCode\": \"RULETH\",\r\n                \"infoCode\": 1,\r\n                \"salesVolume\": {\r\n                    \"volume\": 5700,\r\n                    \"price\": 0.25,\r\n                    \"type\": \"TOTALSALES\"\r\n                }\r\n            },\r\n            {\r\n                \"brand\": \"Exxon\",\r\n                \"siteID\": \"10008\",\r\n                \"startDate\": \"2020-12-21T14:00:00.000Z\",\r\n                \"endDate\": \"2020-12-21T14:59:59.000Z\",\r\n                \"productCode\": \"ULSD\",\r\n                \"infoCode\": 1,\r\n                \"salesVolume\": {\r\n                    \"volume\": 999,\r\n                    \"price\": 0,\r\n                    \"type\": \"TOTALSALES\"\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/salesVolume",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"salesVolume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import Wetstock",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"wetStock\": {\r\n\t  \t\"wetStockItems\": [\r\n\t\t{\r\n\t\t\t\"siteId\": \"100001\",\r\n\t\t\t\"effectiveDate\": \"2020-06-15T14:32:23.466Z\",\r\n\t\t\t\"productCode\": \"RULETH\",\r\n\t\t\t\"volume\": 1000,\r\n\t\t\t\"tankId\": \"Unleaded\"\r\n\t\t}]\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/wetStock",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"wetStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "import CostBreakdown all",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "localhost:44355"
+							},
+							{
+								"key": "pragma",
+								"value": "no-cache"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer {{Token}}"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "origin",
+								"value": "https://localhost:44355"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "referer",
+								"value": "https://localhost:44355/swagger/index.html"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "cookie",
+								"value": "ai_user=FmKKu|2019-12-09T12:01:23.477Z; _ga=GA1.1.1744625452.1583145269; __hstc=181257784.be83e35b94b98d0ab687d26d91f401b1.1583145269758.1583145269759.1583145269759.1; hubspotutk=be83e35b94b98d0ab687d26d91f401b1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"costs\": {\r\n\t  \"costItems\": [\r\n\t\t{\r\n\t\t  \"entity\": \"ALL\",\r\n\t\t  \"entityName\": \"\",\r\n\t\t  \"effectiveDate\": \"2020-10-30T13:01:00.903Z\",\r\n\t\t  \"productCode\": \"RULETH\",\r\n\t\t  \"cost\": {\r\n\t\t\t\"costValue\": 0.757,\r\n\t\t\t\"costType\": \"TOTALCOSTS\"\r\n\t\t  }\r\n\t\t}\r\n\t  ]\r\n\t}\r\n  }"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/costBreakdown",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"costBreakdown"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{endpoint}}/api/import/deliveryVolume",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"deliveries\": [{\r\n\t\t\"brand\": \"NEX\",\r\n\t\t\"siteId\": \"100001\",\r\n\t\t\"productId\": \"ULSD\",\r\n\t\t\"effectiveTime\": \"2022-01-16T13:58:26.315Z\",\r\n\t\t\"volume\": 1000,\r\n\t\t\"invoicePrice\": 1000.00,\r\n\t\t\"grossMargin\": 0.25\r\n\t}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/deliveryVolume",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"deliveryVolume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{endpoint}}/api/import/costBreakdown",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"costs\": {\r\n\t  \"costItems\": [\r\n\t\t{\r\n\t\t  \"entity\": \"OWNSITE\",\r\n\t\t  \"entityName\": \"100001\",\r\n\t\t  \"effectiveDate\": \"2021-10-30T16:02:12.903Z\",\r\n\t\t  \"productCode\": \"RULETH\",\r\n\t\t  \"cost\": {\r\n\t\t\t\"costValue\": 0.757,\r\n\t\t\t\"costType\": \"RETAILTAX\"\r\n\t\t  }\r\n\t\t}\r\n\t  ]\r\n\t}\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/import/costBreakdown",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"import",
+								"costBreakdown"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Data API Microsoft oauth2 token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "{{client_id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client_secret}}",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "api://{{scopehost}}.data.thekalibratecloud.com/{{tenantId}}/.default",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.microsoftonline.com/{{mstenantId}}/oauth2/v2.0/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"microsoftonline",
+								"com"
+							],
+							"path": [
+								"{{mstenantId}}",
+								"oauth2",
+								"v2.0",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"disabled": true
+		}
+	]
+}
